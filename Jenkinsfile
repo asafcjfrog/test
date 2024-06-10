@@ -27,6 +27,10 @@ pipeline {
         stage('Download Frogbot') {
             steps {
                 script {
+                    echo $JF_GIT_REPO
+                    echo $JF_GIT_PULL_REQUEST_ID
+                    echo $JF_GIT_OWNER
+                    echo $TRIGGER_KEY
                     if (env.JF_RELEASES_REPO == "") {
                         sh """ curl -fLg "https://releases.jfrog.io/artifactory/frogbot/v2/latest/getFrogbot.sh" | sh"""
                     } else {
