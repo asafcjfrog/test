@@ -3,11 +3,10 @@ pipeline {
 
     environment {
         // Corrected assignments with the correct syntax
-        JF_GIT_REPO = "${env.JOB_NAME.split('/')[1]}"
+        JF_GIT_REPO = "${env.GIT_URL.tokenize('/')[-1].replace('.git', '')}"
         JF_GIT_PULL_REQUEST_ID = "${env.CHANGE_ID}"
         JF_GIT_OWNER = "${env.CHANGE_AUTHOR}"
-        TRIGGER_KEY = "${env.CHANGE_TITLE}"
-        // Add other environment variables as necessary
+        TRIGGER_KEY = "opened" // Assuming we are interested in the PR creation event
     }
 
     stages {
