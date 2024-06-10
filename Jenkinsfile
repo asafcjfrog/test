@@ -13,6 +13,7 @@ pipeline {
         JF_USER = credentials("JF_USER")
         JF_PASSWORD = credentials("JF_PASSWORD")
         JF_GIT_TOKEN = credentials("JF_GIT_TOKEN")
+        JF_RELEASES_REPO= ""
     }
 
     stages {
