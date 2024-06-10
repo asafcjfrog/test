@@ -49,11 +49,7 @@ pipeline {
         stage('Download Frogbot') {
             steps {
                 script {
-                    if (env.JF_RELEASES_REPO == "") {
-                        sh """ curl -fLg "https://releases.jfrog.io/artifactory/frogbot/v2/latest/getFrogbot.sh" | sh"""
-                    } else {
-                        sh "curl -fLg '${env.JF_URL}/artifactory/${env.JF_RELEASES_REPO}/artifactory/frogbot/v2/latest/getFrogbot.sh' | sh"
-                    }
+                    sh """ curl -fLg "https://releases.jfrog.io/artifactory/frogbot/v2/latest/getFrogbot.sh" | sh"""
                 }
             }
         }
