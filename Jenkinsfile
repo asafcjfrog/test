@@ -7,6 +7,12 @@ pipeline {
         JF_GIT_PULL_REQUEST_ID = "${env.CHANGE_ID}"
         JF_GIT_OWNER = "${env.CHANGE_AUTHOR}"
         TRIGGER_KEY = "opened" // Assuming we are interested in the PR creation event
+        
+        JF_GIT_PROVIDER = "github"
+        JF_URL = credentials("JF_URL")
+        JF_USER = credentials("JF_USER")
+        JF_PASSWORD = credentials("JF_PASSWORD")
+        JF_GIT_TOKEN = credentials("JF_GIT_TOKEN")
     }
 
     stages {
