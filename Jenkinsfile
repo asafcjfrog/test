@@ -23,7 +23,7 @@ pipeline {
                     
                     // Print all environment variables
                     echo "All Environment Variables:"
-                    env.each { k, v -> echo "${k} = ${v}" }
+                    env
                 }
             }
         }
