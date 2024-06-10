@@ -49,7 +49,7 @@ pipeline {
         stage('Download Frogbot') {
             steps {
                 script {
-                    sh """ curl -fLg "https://releases.jfrog.io/artifactory/frogbot/v2/latest/getFrogbot.sh" | sh"""
+                    sh """ curl -fLg "https://releases.jfrog.io/artifactory/frogbot/v2/[RELEASE]/getFrogbot.sh" | sh"""
                 }
             }
         }
