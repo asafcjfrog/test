@@ -22,7 +22,7 @@ pipeline {
                     
                     // Print all environment variables
                     echo "All Environment Variables:"
-                    env
+                    sh 'printenv'
                 }
             }
         }
